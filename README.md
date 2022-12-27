@@ -18,7 +18,7 @@ Required config.json file:
     "client_secret": "REDDIT_APPLICATION_CLIENT_SECRET",
     "username": "REDDIT_BOT_ACCOUNT_USERNAME",
     "password": "REDDIT_BOT_ACCOUNT_PASSWORD",
-    "ban_message": "You've been banned for saying: <word>", # 
+    "ban_message": "You've been banned for saying: <word>", 
     "quotes": false 
 }
 ```
