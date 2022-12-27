@@ -23,7 +23,8 @@ Required config.json file:
 }
 ```
 
-<word> is a template for the detected word in the ban_message
+\<word\> is a template for the detected word in the ban_message
+
 Set "quotes" to true if you want to include quote in message to check (Markdown: "> quote")
 
 Run with:
