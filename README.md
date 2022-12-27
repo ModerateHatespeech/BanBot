@@ -18,7 +18,13 @@ Required config.json file:
     "client_secret": "REDDIT_APPLICATION_CLIENT_SECRET",
     "username": "REDDIT_BOT_ACCOUNT_USERNAME",
     "password": "REDDIT_BOT_ACCOUNT_PASSWORD",
-    "ban_message": "You've been banned for saying: <word>", # <word> is a template for the detected word
-    "quotes": false # True if include quote in message to check (Markdown: "> quote")
+    "ban_message": "You've been banned for saying: <word>", # 
+    "quotes": false 
 }
 ```
+
+<word> is a template for the detected word in the ban_message
+Set "quotes" to true if you want to include quote in message to check (Markdown: "> quote")
+
+Run with:
+```python3 bot.py```
