@@ -1,8 +1,8 @@
 """
-Toxicity Content Bot Script by ModerateHatespeech.com
-@description Scans subreddit(s) for content that is considered toxic and reports the comment to moderators
+BadworBot by ModerateHatespeech.com
+@description Scans subreddit(s) for content that is on a list of bad words and ban the user
 @version 1.0.0
-@last_updated 2/13/2022
+@last_updated 12/27/2022
 """
 
 import praw
@@ -18,7 +18,7 @@ def load_config():
   """ Load configuration file """
   with open("config.json", "r") as f:
     config = json.load(f)
-    missing = ["client_id", "client_secret", "subreddit", "api_token","username", "password","threshold"] - config.keys()
+    missing = ["client_id", "client_secret", "subreddit", "api_token","username", "password","ban_message", "quotes"] - config.keys()
     if len(missing) > 0:
       raise KeyError("Missing keys in config.json {0}".format(str(missing)))
     return config
@@ -37,9 +37,6 @@ def login(config):
 def get_reg_exp():
   with open("words.txt", "r") as f:
     words = f.read().splitlines()
-    # turn into something like this:
-    # (?:^| )(?:<each word from word separated by a |)(?: |$|\.|!|\?|,)
-    # (?:^| )(?:word1|word2|word3)(?: |$|\.|!|\?|,)
     expression = r"(?i)(?:^| |\"|')(?:" + "|".join(words) + ")(?: |$|\.|!|\?|,|'|\")"
     return expression
 
